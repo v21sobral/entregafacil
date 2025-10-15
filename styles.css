@@ -15,9 +15,9 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #000000 0%, #000000 50%, #2c5364 100%);
+    background: linear-gradient(155deg, #000000 0%, #031944 50%, #ffd970 90%);
     display: flex;
-    flex-direction: column;
+    flex-direction: column;           
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
@@ -101,9 +101,9 @@ body::before {
 
 /* Glass Header */
 header {
-    background: rgba(30, 58, 77, 0.7);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(14, 14, 14, 0.377);
+    backdrop-filter: blur(20px) saturate(110%);
+    -webkit-backdrop-filter: blur(20px) saturate(110%);
     padding: 1rem 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     position: sticky;
@@ -235,19 +235,19 @@ header {
     .signup-link {
         text-align: center;
         margin-top: 1.5rem;
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(0, 0, 0, 0.8);
         font-size: 0.9rem;
     }
 
     .highlight-link {
-        color: var(--primary-orange);
+        color: var(--primary-black);
         text-decoration: none;
         font-weight: 500;
         transition: all 0.3s ease;
     }
 
     .highlight-link:hover {
-        color: #ff8c42;
+        color: #ffffff;
         text-decoration: underline;
     }
 @keyframes pulse {
@@ -1051,13 +1051,15 @@ nav a:hover {
 
 /* Footer */
 footer {
-    background: rgba(30, 58, 77, 0.9);
-    backdrop-filter: blur(20px);
-    padding: 2rem;
-    margin-top: auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    z-index: 100;
+    background: rgba(14, 14, 14, 0.377);
+    backdrop-filter: blur(20px) saturate(110%);
+    -webkit-backdrop-filter: blur(20px) saturate(110%);
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-content {
