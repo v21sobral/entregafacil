@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrega Fácil - Conectando você ao que precisa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo" data-show-page="home">
+                <div class="logo-icon">
+                    <img src="Images/entregafacilChatTransparent.png" alt="Entrega Fácil">
+                </div>
+                <h1>Entrega <span>Fácil</span></h1>
+            </a>
+            
+            <nav class="main-nav">
+                <button class="nav-button" data-show-page="home">Início</button>
+                <button class="nav-button" data-show-page="support">Suporte</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home/Login Page -->
+    <div id="home" class="page active">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="body-image">
+                    <img src="Images/entregafacilChatTransparent.png" alt="Entrega Fácil">
+                </div>
+                
+                <h2>Tornado o seu dia mais <span class="highlight">fácil</span></h2>
+                <p>A plataforma mais fácil para comprar e vender produtos com entrega rápida e segura.</p>
+                <div class="features">
+                    <div class="feature-item">Entrega Rápida</div>
+                    <div class="feature-item">Pagamento Seguro</div>
+                    <div class="feature-item">Suporte 24/7</div>
+                    
+                </div>
+            </div>
+            <div class="login-card">
+                <h3>Bem-vindo!</h3>
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-login-type="customer">Comprador</button>
+                    <button class="tab-button" data-login-type="seller">Vendedor</button>
+                </div>
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" placeholder="••••••••" required>
+                    </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    
+                        <div class="login-divider">
+                            <span>ou</span>
+                        </div>
+                    
+                        <button type="button" class="btn btn-google">
+                                                        <span style="display:flex;align-items:center;gap:10px;">
+                                                            <svg width="20" height="20" viewBox="0 0 48 48"><g><path fill="#4285F4" d="M24 9.5c3.54 0 6.73 1.22 9.24 3.22l6.9-6.9C36.16 2.34 30.4 0 24 0 14.82 0 6.62 5.48 2.44 13.44l8.06 6.27C12.7 13.13 17.92 9.5 24 9.5z"/><path fill="#34A853" d="M46.1 24.5c0-1.64-.15-3.22-.43-4.75H24v9.02h12.44c-.54 2.9-2.17 5.36-4.62 7.02l7.18 5.59C43.98 37.13 46.1 31.27 46.1 24.5z"/><path fill="#FBBC05" d="M10.5 28.44c-1.13-3.36-1.13-6.98 0-10.34l-8.06-6.27C.86 15.7 0 19.74 0 24c0 4.26.86 8.3 2.44 12.17l8.06-6.27z"/><path fill="#EA4335" d="M24 48c6.4 0 12.16-2.13 16.62-5.81l-7.18-5.59c-2.01 1.35-4.6 2.15-7.44 2.15-6.08 0-11.3-3.63-13.5-8.94l-8.06 6.27C6.62 42.52 14.82 48 24 48z"/></g></svg>
+                                                            Entrar com Google
+                                                        </span>
+                                                </button>
+                    
+                        <div class="signup-link">
+                            Não tem uma conta? <a href="#" class="highlight-link">Cadastre-se</a>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seller Page -->
+    <div id="seller" class="page">
+        <div class="dashboard">
+            <div class="dashboard-header">
+                <h2>Painel do Vendedor</h2>
+                <p>Gerencie seus produtos e vendas</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Vendas Hoje</h4>
+                    <div class="value">47</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Produtos Ativos</h4>
+                    <div class="value">23</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Pedidos Pendentes</h4>
+                    <div class="value">8</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Receita Mensal</h4>
+                    <div class="value">R$ 12.5k</div>
+                </div>
+            </div>
+
+            <div class="products-section">
+                <div class="section-header">
+                    <h3>Meus Produtos</h3>
+                    <button class="btn-add" data-open-modal="addProduct">+ Adicionar Produto</button>
+                </div>
+                <div class="products-grid" id="sellerProducts">
+                    <div class="product-card">
+                        <img src="#" alt="Produto">
+                        <h4>Notebook Gamer</h4>
+                        <p>Estoque: 5 unidades</p>
+                        <div class="price">R$ 3.499,00</div>
+                        <div class="product-actions">
+                            <button class="btn-small btn-edit">Editar</button>
+                            <button class="btn-small btn-delete">Excluir</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="#" alt="Produto">
+                        <h4>Mouse Wireless</h4>
+                        <p>Estoque: 15 unidades</p>
+                        <div class="price">R$ 89,90</div>
+                        <div class="product-actions">
+                            <button class="btn-small btn-edit">Editar</button>
+                            <button class="btn-small btn-delete">Excluir</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="#" alt="Produto">
+                        <h4>Teclado Mecânico</h4>
+                        <p>Estoque: 8 unidades</p>
+                        <div class="price">R$ 249,90</div>
+                        <div class="product-actions">
+                            <button class="btn-small btn-edit">Editar</button>
+                            <button class="btn-small btn-delete">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Page -->
+    <div id="customer" class="page">
+        <div class="dashboard">
+            <div class="dashboard-header">
+                <h2>Loja Virtual</h2>
+                <p>Encontre os melhores produtos com entrega rápida</p>
+            </div>
+
+            <div class="categories">
+                <button class="category-btn active"><span>Todos</span></button>
+                <button class="category-btn"><span>Eletrônicos</span></button>
+                <button class="category-btn"><span>Moda</span></button>
+                <button class="category-btn"><span>Casa</span></button>
+                <button class="category-btn"><span>Esportes</span></button>
+                <button class="category-btn"><span>Livros</span></button>
+            </div>
+
+            <div class="products-section">
+                <h3>Produtos Disponíveis</h3>
+                <div class="products-grid" id="customerProducts">
+                    <div class="product-card">
+                        <img src="#" alt="Produto">
+                        <h4>Notebook Gamer</h4>
+                        <p>Intel Core i7, 16GB RAM, RTX 3060</p>
+                        <div class="price">R$ 3.499,00</div>
+                        <button class="btn btn-primary" data-add-to-cart data-name="Notebook Gamer" data-price="3499">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="#" alt="Produto">
+                        <h4>Mouse Wireless</h4>
+                        <p>Ergonômico, 2400 DPI, Sem fio</p>
+                        <div class="price">R$ 89,90</div>
+                        <button class="btn btn-primary" data-add-to-cart data-name="Mouse Wireless" data-price="89.90">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="#" alt="Produto">
+                        <h4>Teclado Mecânico</h4>
+                        <p>RGB, Switch Blue, ABNT2</p>
+                        <div class="price">R$ 249,90</div>
+                        <button class="btn btn-primary" data-add-to-cart data-name="Teclado Mecânico" data-price="249.90">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="#" alt="Produto">
+                        <h4>Fone Bluetooth</h4>
+                        <p>Cancelamento de ruído, 30h bateria</p>
+                        <div class="price">R$ 199,90</div>
+                        <button class="btn btn-primary" data-add-to-cart data-name="Fone Bluetooth" data-price="199.90">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="#" alt="Produto">
+                        <h4>Webcam HD</h4>
+                        <p>1080p, Microfone embutido</p>
+                        <div class="price">R$ 159,90</div>
+                        <button class="btn btn-primary" data-add-to-cart data-name="Webcam HD" data-price="159.90">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="#" alt="Produto">
+                        <h4>Monitor 24"</h4>
+                        <p>Full HD, IPS, 75Hz</p>
+                        <div class="price">R$ 699,90</div>
+                        <button class="btn btn-primary" data-add-to-cart data-name="Monitor 24\"" data-price="699.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-float" data-open-modal="cart">
+            🛒
+            <span class="cart-badge" id="cartCount">0</span>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Adicionar Produto</h3>
+                <button class="close-modal" data-close-modal="addProduct">&times;</button>
+            </div>
+            <form onsubmit="addProduct(event)">
+                <div class="form-group">
+                    <label>Nome do Produto</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Preço (R$)</label>
+                    <input type="number" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>Estoque</label>
+                    <input type="number" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Meu Carrinho</h3>
+                <button class="close-modal" data-close-modal="cart">&times;</button>
+            </div>
+            <div id="cartItems"></div>
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid rgba(255, 255, 255, 0.2);">
+                <h3 style="color: white;">Total: <span style="background: linear-gradient(135deg, var(--primary-orange), #ff8c42); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" id="cartTotal">R$ 0,00</span></h3>
+                <button class="btn btn-primary" style="margin-top: 1.5rem;">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Page -->
+    <div id="support" class="page">
+        <div class="support-container">
+            <div class="support-content">
+                <h2>Suporte ao Cliente</h2>
+                <p>Preencha o formulário abaixo e entraremos em contato via WhatsApp</p>
+                
+                <form class="support-form" id="supportForm" onsubmit="handleSupportForm(event)">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp</label>
+                        <input type="tel" placeholder="(00) 00000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mensagem</label>
+                        <textarea placeholder="Digite sua mensagem..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
