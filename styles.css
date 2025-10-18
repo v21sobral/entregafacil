@@ -1281,6 +1281,56 @@ footer {
     margin-top: 1.5rem;
 }
 
+/* Estilos para o checkbox personalizado */
+.form-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.form-group input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, var(--primary-orange), #ff8c42);
+    border-color: var(--primary-orange);
+}
+
+.form-group input[type="checkbox"]:checked::before {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-group input[type="checkbox"]:hover {
+    border-color: var(--primary-orange);
+    transform: scale(1.1);
+}
+
+/* Estilo para a label do checkbox */
+.form-group label[for="tipoVendedor"] {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.form-group label[for="tipoVendedor"]:hover {
+    background: rgba(245, 160, 68, 0.1);
+    border-color: var(--primary-orange);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .support-container {

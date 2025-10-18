@@ -97,19 +97,33 @@ function removeFromCart(index) {
 function handleCadastro(event) {
     event.preventDefault();
     
-    // Aqui você pode adicionar validações e lógica de cadastro
     const form = event.target;
     const senha = form.querySelector('input[type="password"]').value;
     const confirmarSenha = form.querySelectorAll('input[type="password"]')[1].value;
+    const isVendedor = document.getElementById('tipoVendedor').checked;
     
+    // Validação de senha
     if (senha !== confirmarSenha) {
         alert('As senhas não coincidem!');
         return;
     }
     
+    // Validação de força da senha (opcional)
+    if (senha.length < 6) {
+        alert('A senha deve ter pelo menos 6 caracteres!');
+        return;
+    }
+    
     // Simulação de cadastro bem-sucedido
-    alert('Cadastro realizado com sucesso!');
-    showPage('home');
+    const tipoUsuario = isVendedor ? 'vendedor' : 'morador';
+    alert(`Cadastro realizado com sucesso como ${tipoUsuario}!`);
+    
+    // Redireciona para a página apropriada
+    if (isVendedor) {
+        showPage('seller');
+    } else {
+        showPage('customer');
+    }
 }
 
 
