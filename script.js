@@ -93,6 +93,27 @@ function removeFromCart(index) {
     updateCartUI();
 }
 
+// Função para lidar com o formulário de cadastro
+function handleCadastro(event) {
+    event.preventDefault();
+    
+    // Aqui você pode adicionar validações e lógica de cadastro
+    const form = event.target;
+    const senha = form.querySelector('input[type="password"]').value;
+    const confirmarSenha = form.querySelectorAll('input[type="password"]')[1].value;
+    
+    if (senha !== confirmarSenha) {
+        alert('As senhas não coincidem!');
+        return;
+    }
+    
+    // Simulação de cadastro bem-sucedido
+    alert('Cadastro realizado com sucesso!');
+    showPage('home');
+}
+
+
+
 // Category filter animation
 document.addEventListener('DOMContentLoaded', () => {
     const categoryBtns = document.querySelectorAll('.category-btn');
@@ -129,6 +150,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = el.getAttribute('data-name');
         const price = parseFloat(el.getAttribute('data-price')) || 0;
         el.addEventListener('click', (e) => addToCart(name, price, e));
+    });
+});
+
+// Adicione esta linha no DOMContentLoaded para garantir que o link de cadastro funcione
+document.addEventListener('DOMContentLoaded', () => {
+    // ... código existente ...
+    
+    // Garantir que o link "Cadastre-se" funcione
+    document.querySelectorAll('.signup-link a[data-show-page="cadastro"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            showPage('cadastro');
+        });
     });
 });
 
